@@ -1977,7 +1977,6 @@ void immediate::PxIntegrateSolverBodiesTGS(PxTGSSolverBodyVel* solverBody, PxTGS
 
 
 #include "PxvGlobals.h"
-#include "PxPhysXGpu.h"
 #include "BpBroadPhase.h"
 #include "PxsHeapMemoryAllocator.h"
 #include "PxsKernelWrangler.h"
@@ -2259,6 +2258,9 @@ const PxU32* ImmCPUBP::getOutOfBoundsObjects()	const
 ///////////////////////////////////////////////////////////////////////////////
 
 #if PX_SUPPORT_GPU_PHYSX
+
+#include "PxPhysXGpu.h"
+
 namespace
 {
 	class ImmGPUBP : public ImmCPUBP, public PxAllocatorCallback
